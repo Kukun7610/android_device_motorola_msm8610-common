@@ -37,6 +37,9 @@ TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_VARIANT := krait
 
+# Dex
+WITH_DEXPREOPT := false
+
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MSM8610
 TARGET_NO_BOOTLOADER := true
@@ -49,6 +52,7 @@ BOARD_KERNEL_SEPARATED_DT := true
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom androidboot.bootdevice=msm_sdcc.1 vmalloc=400M
 LZMA_RAMDISK_TARGETS := recovery
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
 
 TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 TARGET_SYSTEM_PROP := $(COMMON_PATH)/system.prop
@@ -86,6 +90,7 @@ MAX_EGL_CACHE_SIZE := 2048*1024
 BOARD_HAVE_QCOM_FM := true
 TARGET_QCOM_NO_FM_FIRMWARE := true
 
+
 # GPS
 TARGET_NO_RPC := true
 
@@ -99,8 +104,9 @@ TARGET_PROVIDES_LIBLIGHT := true
 MALLOC_SVELTE := true
 
 # Qualcomm support
-# BOARD_USES_QCOM_HARDWARE := true
+BOARD_USES_QCOM_HARDWARE := false
 TARGET_RIL_VARIANT := caf
+TARGET_USES_QCOM_BSP := true
 
 # Recovery
 TARGET_RECOVERY_DENSITY := hdpi
