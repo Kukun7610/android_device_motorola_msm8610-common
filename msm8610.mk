@@ -201,4 +201,4 @@ PRODUCT_GMS_CLIENTID_BASE := android-motorola
 # Inhert dalvik heap values
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
-$(call inherit-product-if-exists, hardware/qcom/msm8x74/msm8x74.mk)
+$(call inherit-product-if-exists, hardware/qcom/msm8974/Android.mk.mk)
